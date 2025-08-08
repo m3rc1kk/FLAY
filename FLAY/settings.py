@@ -34,8 +34,8 @@ ALLOWED_HOSTS = ['flay-award.website', 'www.flay-award.website', '127.0.0.1', 'l
 CSRF_TRUSTED_ORIGINS = [
     'http://127.0.0.1:8000/',
     'http://localhost:8000',
-    'http://flay-award.website',
-    'http://www.flay-award.website',
+    'https://flay-award.website',
+    'https://www.flay-award.website',
 ]
 
 CSRF_COOKIE_SECURE = True
