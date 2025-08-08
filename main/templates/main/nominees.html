@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<main class="content">
+    <div class="choice container">
+        <div class="choice__inner">
+                <header class="choice__header">
+                    <div class="choice__logo logo">
+                        <img src="{% static 'images/logo.svg' %}" width="42" height="45" loading="lazy" alt="" class="logo__image">
+                    </div>
+                    <h1 class="choice__title">{{ award.name }}</h1>
+                    <span class="choice__subtitle">{{ award.description }}</span>
+                </header>
+
+                <div class="choice__body">
+                    <a href="{% url 'index' %}#nomination" class="button choice__button">К номинации</a>
+                    <ul class="choice__list">
+                        <!--
+                        <li class="choice__item choice__item--active">
+                            <header class="choice__item-header">
+                                <div class="choice__item-logo logo">
+                                    <img src="./images/logo_dark.svg" width="24" height="26" loading="lazy" alt="" class="logo__image">
+                                </div>
+                                <button class="choice__item-info choice__item-info--active" onclick="info.showModal()">Инфо</button>
+                            </header>
+
+                            <img src="./images/choice/avatar.png" width="170" height="169" loading="lazy" alt="" class="choice__item-avatar">
+
+                            <footer class="choice__item-footer">
+                                <span class="choice__username">@Ia_Myzchina</span>
+                                <h1 class="choice__name">Максим Пятин</h1>
+                                <button class="choice__vote button choice__vote--active"><img src="./images/nomination/checkmark.svg" width="18" height="18" alt=""
+                                                                                              class="choice__vote-icon"> Голос отдан</button>
+                            </footer>
+                        </li>
+                        -->
+
+                        {% for nominee in award.nominees.all %}
+                        <li class="choice__item {% if nominee.id == voted_nominee_id %}choice__item--active{% endif %}">
+                            <header class="choice__item-header">
+                                <div class="choice__item-logo logo ">
+                                    {% if nominee.id == voted_nominee_id %}
+                                        <img src="{% static 'images/logo_dark.svg' %}" width="24" height="26" loading="lazy" alt="" class="logo__image">
+                                    {% else %}
+                                        <img src="{% static 'images/logo.svg' %}" width="24" height="26" loading="lazy" alt="" class="logo__image">
+                                    {% endif %}
+                                </div>
+                                {% if nominee.description %}
+                                <button class="choice__item-info {% if nominee.id == voted_nominee_id %}choice__item-info--active{% endif %}"
+                                        data-name="{{ nominee.name }}"
+                                        data-description="{{ nominee.description|escapejs }}"
+                                        data-image="{{ nominee.image.url }}"
+                                        onclick="openInfoModal(this)">
+
+                                        Инфо
+                                </button>
+                                {% endif %}
+                            </header>
+
+                            <img src="{{ nominee.image.url }}" width="170" height="169" loading="lazy" alt="" class="choice__item-avatar">
+
+                            <footer class="choice__item-footer">
+                                <span class="choice__username">{{ nominee.telegram }}</span>
+                                <h1 class="choice__name">{{ nominee.name }}</h1>
+                                <a class="choice__vote button {% if nominee.id == voted_nominee_id %}choice__vote--active{% endif %}" href="{% url 'vote' award.id nominee.id %}">
+                                    {% if nominee.id == voted_nominee_id %}
+                                        Голос отдан
+                                    {% else %}
+                                        Отдать голос
+                                    {% endif %}
+                                </a>
+                            </footer>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+</main>
+
+
+<dialog class="info" id="info">
+    <header class="info__header">
+        <div class="info__profile">
+            <img src="" width="48" height="48" loading="lazy" alt="Avatar" class="info__avatar" id="info-avatar">
+            <h1 class="info__title" id="info-name"></h1>
+        </div>
+        <form class="info__close-button-wrapper" method="dialog">
+            <button type="submit" class="info__close-button cross-button"></button>
+        </form>
+    </header>
+
+    <div class="info__body">
+        <p id="info-description"></p>
+    </div>
+</dialog>
+<script>
+function openInfoModal(button) {
+    const name = button.getAttribute('data-name');
+    const description = button.getAttribute('data-description');
+    const image = button.getAttribute('data-image');
+
+    document.getElementById('info-name').textContent = name;
+    document.getElementById('info-description').textContent = description;
+    document.getElementById('info-avatar').src = image;
+
+    document.getElementById('info').showModal();
+}
+</script>
+
+{% endblock %}

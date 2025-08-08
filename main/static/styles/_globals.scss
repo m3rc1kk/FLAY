@@ -1,0 +1,27 @@
+body {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--color-accent);
+  background: var(--bg-gradient);
+
+}
+
+
+a,
+button,
+input,
+textarea,
+svg *  {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 400;
+}

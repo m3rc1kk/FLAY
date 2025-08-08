@@ -1,0 +1,20 @@
+@import 'normalize', 'fonts', 'variables', 'media', 'utils', 'globals', 'mixins';
+
+@import
+        'blocks/animations',
+        'blocks/button',
+        'blocks/logo',
+        'blocks/form',
+        'blocks/sign-in',
+        'blocks/sign-up',
+        'blocks/reset-password',
+        'blocks/header',
+        'blocks/hero',
+        'blocks/about',
+        'blocks/block',
+        'blocks/nomination',
+        'blocks/winner',
+        'blocks/footer',
+        'blocks/choice',
+        'blocks/cross-button',
+        'blocks/info';

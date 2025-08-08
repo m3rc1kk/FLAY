@@ -1,0 +1,17 @@
+.button {
+  height: var(--input-height);
+  border-radius: var(--border-radius);
+  border: 0;
+  padding: 0;
+  font-size: 16px;
+  background-color: var(--color-accent);
+  color: var(--color-accent-dark);
+
+  &__margin {
+    margin-top: 24px;
+  }
+
+  @include hover {
+    box-shadow: var(--box-shadow);
+  }
+}
