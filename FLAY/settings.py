@@ -29,8 +29,20 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['flay-award.website', 'www.flay-award.website', '127.0.0.1', 'localhost']
 
+CSRF_TRUSTED_ORIGINS = [
+    'http://127.0.0.1:8000/',
+    'http://localhost:8000',
+    'http://flay-award.website',
+    'http://www.flay-award.website',
+]
+
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+X_FRAME_OPTIONS = 'DENY'
 
 # Application definition
 
