@@ -30,7 +30,7 @@ services:
     depends_on:
       db:
         condition: service_healthy
-    command: sh -c "python manage.py migrate && gunicorn flay.wsgi:application --bind 0.0.0.0:8000"
+    command: sh -c "python manage.py migrate && gunicorn FLAY.wsgi:application --bind 0.0.0.0:8000"
     networks:
       - app-network
 
