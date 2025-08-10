@@ -38,6 +38,8 @@ CSRF_TRUSTED_ORIGINS = [
     'https://www.flay-award.website',
 ]
 
+
+
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 SECURE_BROWSER_XSS_FILTER = True
@@ -59,6 +61,7 @@ INSTALLED_APPS = [
     'main.apps.MainConfig',
 ]
 
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -70,13 +73,13 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'FLAY.urls'
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
+
             'context_processors': [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -85,6 +88,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'FLAY.wsgi.application'
 

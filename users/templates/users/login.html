@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <main class="content">
+    <div class="sign-in form-wrapper container">
+        <header class="sign-in__header form__header">
+            <div class="sign-in__logo logo form__logo">
+                <img src="{% static 'images/logo.png' %}" width="42" height="45" loading="lazy" alt="Logo" class="logo__image">
+            </div>
+
+            <h1 class="sign-in__title form__title">Вход</h1>
+            <div class="sign-in__description form__description">
+                <p>Добро пожаловать на <span class="sign-in__description--accent form__description--accent">FLAY!</span></p>
+            </div>
+        </header>
+
+        <script async
+                src="https://telegram.org/js/telegram-widget.js?22"
+                data-telegram-login="FanClubAwardBot"
+                data-size="large"
+                data-auth-url="https://flay-award.website/user/login/"
+                data-request-access="write"></script>
+    </div>
+
+
+</main>
+{% endblock %}
