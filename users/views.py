@@ -31,6 +31,7 @@ def check_telegram_auth(data: dict) -> bool:
 
 from django.http import HttpResponse
 
+
 def telegram_auth(request):
     data = request.GET.dict()
     print("Telegram data:", data)
