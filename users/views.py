@@ -6,6 +6,7 @@ from django.contrib.auth import login
 from django.shortcuts import redirect
 from django.contrib.auth.models import User
 from django.views.generic import TemplateView
+from django.http import HttpResponse
 
 import os
 from dotenv import load_dotenv
@@ -28,13 +29,8 @@ def check_telegram_auth(data: dict) -> bool:
 
     return hmac_hash == hash_
 
-
-from django.http import HttpResponse
-
-
 def telegram_auth(request):
     data = request.GET.dict()
-    print("Telegram data:", data)
 
     if 'hash' not in data:
         return HttpResponse("Ошибка: отсутствует hash", status=400)
@@ -50,7 +46,6 @@ def telegram_auth(request):
         defaults={'first_name': data.get('first_name', ''), 'last_name': data.get('last_name', '')}
     )
     login(request, user)
-    print(f"User {'создан' if created else 'найден'} и залогинен: {user}")
 
-    return redirect('index')  # Или в существующий URL
+    return redirect('index')
 

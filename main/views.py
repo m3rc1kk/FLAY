@@ -7,6 +7,13 @@ from .models import Award, Nominee, Vote, Winner
 class IndexView(TemplateView):
     template_name = 'main/index.html'
 
+    ALLOWED_USERS = ['m3rc1k']
+
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated or request.user.username not in self.ALLOWED_USERS:
+            return redirect('auth')
+        return super().dispatch(request, *args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
