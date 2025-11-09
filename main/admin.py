@@ -14,6 +14,7 @@ class VoteInline(admin.TabularInline):
 class AwardAdmin(admin.ModelAdmin):
     list_display = ('name', 'vote_count')
     inlines = [VoteInline]
+    prepopulated_fields = {"slug": ("name",)}
 
     def vote_count(self, obj):
         return obj.votes.count()
@@ -24,6 +25,7 @@ class AwardAdmin(admin.ModelAdmin):
 @admin.register(Nominee)
 class NomineeAdmin(admin.ModelAdmin):
     list_display = ('name', 'telegram', 'vote_count')
+
 
     def vote_count(self, obj):
         return obj.votes.count()

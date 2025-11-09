@@ -29,13 +29,13 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'flay-award.website', 'www.flay-award.website']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'flay2025.ru', 'www.flay2025.ru']
 
 CSRF_TRUSTED_ORIGINS = [
-    'http://127.0.0.1:8000',
-    'http://127.0.0.1:8000',
-    'https://flay-award.website',
-    'https://www.flay-award.website',
+    'http://127.0.0.1:8000/',
+    'http://localhost:8000/',
+    'https://flay2025.ru/',
+    'https://www.flay2025.ru/',
 ]
 
 
@@ -72,7 +72,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-SECURE_CROSS_ORIGIN_OPENER_POLICY = 'same-origin-allow-popups'
+#SECURE_CROSS_ORIGIN_OPENER_POLICY = 'same-origin-allow-popups'
 
 ROOT_URLCONF = 'FLAY.urls'
 TEMPLATES = [
@@ -101,9 +101,9 @@ WSGI_APPLICATION = 'FLAY.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('POSTGRES_DB'),
-        'USER': os.getenv('POSTGRES_USER'),
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
+        'NAME': os.getenv('POSTGRES_DB', 'flay'),
+        'USER': os.getenv('POSTGRES_USER', 'flay'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'flay'),
         'HOST': os.getenv('POSTGRES_HOST', 'db'),
         'PORT': os.getenv('POSTGRES_PORT', '5432'),
         'ATOMIC_REQUESTS': True,
