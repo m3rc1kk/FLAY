@@ -7,7 +7,7 @@ from django.shortcuts import redirect
 from django.contrib.auth.models import User
 from django.views.generic import TemplateView
 from django.http import HttpResponse
-
+from .models import UserProfile
 import os
 from dotenv import load_dotenv
 load_dotenv()
@@ -41,11 +41,17 @@ def telegram_auth(request):
     telegram_id = data['id']
     username = data.get('username', f"user_{telegram_id}")
 
-    user, created = User.objects.get_or_create(
-        username=username,
-        defaults={'first_name': data.get('first_name', ''), 'last_name': data.get('last_name', '')}
-    )
-    login(request, user)
+    try:
+        profile = UserProfile.objects.get(telegram_id=telegram_id)
+        user = profile.user
+    except UserProfile.DoesNotExist:
+        user = User.objects.create(
+            username=username,
+            first_name=data.get('first_name', ''),
+            last_name=data.get('last_name', '')
+        )
+        UserProfile.objects.create(user=user, telegram_id=telegram_id)
 
+    login(request, user)
     return redirect('index')
 

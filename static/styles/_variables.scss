@@ -1,0 +1,29 @@
+:root {
+  --color-accent: #38FFA2;
+  --color-light: #FFFFFF;
+  --color-accent-dark: #00532C;
+  --color-dark: #1D1D1D;
+  --bg-gradient: linear-gradient(to right, var(--color-dark) 0%, #00331B 100%);
+
+  --font-family: 'Racama', sans-serif;
+  --font-family-title: 'LemonMilk', sans-serif;
+
+  --border-radius: 16px;
+
+  --border: 1px solid var(--color-accent);
+  --border-bold: 2px solid var(--color-accent);
+  --border-dark: 1px solid var(--color-accent-dark);
+  --border-input: 1px solid rgba(255, 255, 255, 0.4);
+
+  --container-width: 1800px;
+  --container-padding-x: 16px;
+
+  --box-shadow: 0 0 6px var(--color-accent);
+  --gradient-hero: linear-gradient(to bottom, rgba(0, 42, 22, 0) 0%, rgba(0, 42, 22, 1) 100%);
+  --gradient-about: linear-gradient(to top, rgba(0, 42, 22, 0) 0%, rgba(0, 42, 22, 1) 100%);
+
+
+  --input-height: 50px;
+
+  --transition-duration: .2s;
+}

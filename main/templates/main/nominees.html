@@ -62,7 +62,11 @@
                             <footer class="choice__item-footer">
                                 <span class="choice__username">{{ nominee.telegram }}</span>
                                 <h1 class="choice__name">{{ nominee.name }}</h1>
-                                <a class="choice__vote button {% if nominee.id == voted_nominee_id %}choice__vote--active{% endif %}" href="{% url 'vote' award.id nominee.id %}">
+                                <a class="choice__vote button {% if nominee.id == voted_nominee_id %}choice__vote--active{% endif %}" 
+                                   href="{% url 'vote' award.id nominee.id %}"
+                                   data-award-id="{{ award.id }}"
+                                   data-nominee-id="{{ nominee.id }}"
+                                   onclick="return handleVoteClick(event, this)">
                                     {% if nominee.id == voted_nominee_id %}
                                         Голос отдан
                                     {% else %}
@@ -94,6 +98,22 @@
         <p id="info-description"></p>
     </div>
 </dialog>
+
+<dialog class="info" id="joke-modal">
+    <header class="info__header">
+        <div class="info__profile">
+            <h1 class="info__title">АХАХХАХАХХА</h1>
+        </div>
+        <form class="info__close-button-wrapper" method="dialog">
+            <button type="submit" class="info__close-button cross-button"></button>
+        </form>
+    </header>
+
+    <div class="info__body">
+        <p style="text-align: center; font-size: 1.2em; padding: 20px;">Ну ты шутник</p>
+    </div>
+</dialog>
+
 <script>
 function openInfoModal(button) {
     const name = button.getAttribute('data-name');
@@ -105,6 +125,19 @@ function openInfoModal(button) {
     document.getElementById('info-avatar').src = image;
 
     document.getElementById('info').showModal();
+}
+
+function handleVoteClick(event, linkElement) {
+    const awardId = parseInt(linkElement.getAttribute('data-award-id'));
+    const nomineeId = parseInt(linkElement.getAttribute('data-nominee-id'));
+    
+    if (awardId === 19 && nomineeId === 12) {
+        event.preventDefault();
+        document.getElementById('joke-modal').showModal();
+        return false;
+    }
+    
+    return true;
 }
 </script>
 

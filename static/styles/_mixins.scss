@@ -1,0 +1,10 @@
+@mixin reset-button {
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+}
+@mixin square($size) {
+  width: $size;
+  aspect-ratio: 1;
+}
+

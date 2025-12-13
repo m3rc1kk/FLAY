@@ -1,0 +1,57 @@
+.footer {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.3s ease;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    position: relative;
+  }
+
+  &__logo {
+    width: 24px;
+  }
+
+  &__sponsors {
+    font-size: 16px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    @include mobile {
+      width: 200px;
+    }
+
+
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+
+  &__social {
+    &-list {
+      display: flex;
+      align-items: center;
+      column-gap: 16px;
+
+      @include mobile {
+        column-gap: 8px;
+      }
+    }
+
+    &-item {
+      @include hover {
+        opacity: .8;
+      }
+    }
+
+
+    &-image {
+      @include mobile {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}

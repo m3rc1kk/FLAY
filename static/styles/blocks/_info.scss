@@ -1,0 +1,62 @@
+.info {
+  width: 800px;
+  max-height: 471px;
+  padding: 40px;
+  background: var(--color-accent);
+  border: 0;
+  border-radius: var(--border-radius);
+
+
+
+
+  @include mobile {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    row-gap: 12px;
+    &:modal {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__profile {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+
+    @include mobile {
+      column-gap: 8px;
+    }
+  }
+
+  &__title {
+    font-size: 20px;
+    color: var(--color-accent-dark);
+    height: 24px;
+
+    @include mobile {
+      font-size: 16px;
+      height: 20px;
+    }
+  }
+
+  &__avatar {
+    width: 32px;
+    height: auto;
+  }
+
+  &__body {
+    font-size: 16px;
+    color: var(--color-accent-dark);
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+}

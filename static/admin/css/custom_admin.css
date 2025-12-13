@@ -1,0 +1,245 @@
+/* FLAY Awards - Custom Admin Theme */
+/* Цвета проекта: акцент #38FFA2, фон #1D1D1D */
+
+:root {
+    --flay-accent: #38FFA2;
+    --flay-accent-dark: #00532C;
+    --flay-dark: #1D1D1D;
+    --flay-light: #FFFFFF;
+}
+
+/* Основной фон */
+body {
+    background: var(--flay-dark) !important;
+    color: var(--flay-light) !important;
+}
+
+/* Хедер админки */
+#header {
+    background: linear-gradient(135deg, var(--flay-dark) 0%, #00331B 100%) !important;
+    border-bottom: 2px solid var(--flay-accent) !important;
+    box-shadow: 0 0 10px rgba(56, 255, 162, 0.3) !important;
+}
+
+#header h1 {
+    color: var(--flay-accent) !important;
+    font-weight: bold !important;
+}
+
+#header a:link, #header a:visited {
+    color: var(--flay-accent) !important;
+}
+
+/* Боковое меню */
+#content-main {
+    background: var(--flay-dark) !important;
+}
+
+.module {
+    background: rgba(29, 29, 29, 0.8) !important;
+    border: 1px solid var(--flay-accent-dark) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.module h2 {
+    background: linear-gradient(135deg, var(--flay-accent-dark) 0%, var(--flay-accent) 100%) !important;
+    color: var(--flay-dark) !important;
+    border-radius: 8px 8px 0 0 !important;
+    padding: 12px !important;
+    font-weight: bold !important;
+}
+
+/* Кнопки */
+.button, input[type="submit"], .submit-row input {
+    background: var(--flay-accent) !important;
+    color: var(--flay-dark) !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 10px 20px !important;
+    font-weight: bold !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 0 6px rgba(56, 255, 162, 0.4) !important;
+}
+
+.button:hover, input[type="submit"]:hover, .submit-row input:hover {
+    background: #2EE68F !important;
+    box-shadow: 0 0 12px rgba(56, 255, 162, 0.6) !important;
+    transform: translateY(-2px) !important;
+}
+
+.button.default, input[type="submit"].default {
+    background: var(--flay-accent) !important;
+    color: var(--flay-dark) !important;
+}
+
+/* Таблицы */
+#result_list {
+    background: rgba(29, 29, 29, 0.9) !important;
+    border: 1px solid var(--flay-accent-dark) !important;
+    border-radius: 8px !important;
+}
+
+#result_list thead th {
+    background: var(--flay-accent-dark) !important;
+    color: var(--flay-accent) !important;
+    border-bottom: 2px solid var(--flay-accent) !important;
+    padding: 12px !important;
+}
+
+#result_list tbody tr {
+    border-bottom: 1px solid rgba(56, 255, 162, 0.1) !important;
+}
+
+#result_list tbody tr:hover {
+    background: rgba(56, 255, 162, 0.1) !important;
+}
+
+#result_list tbody td {
+    color: var(--flay-light) !important;
+    padding: 12px !important;
+}
+
+/* Формы */
+.form-row {
+    background: rgba(29, 29, 29, 0.6) !important;
+    border: 1px solid var(--flay-accent-dark) !important;
+    border-radius: 8px !important;
+    padding: 15px !important;
+    margin-bottom: 15px !important;
+}
+
+input[type="text"], input[type="password"], input[type="email"], 
+input[type="url"], input[type="number"], textarea, select {
+    background: rgba(29, 29, 29, 0.8) !important;
+    border: 1px solid var(--flay-accent-dark) !important;
+    color: var(--flay-light) !important;
+    border-radius: 6px !important;
+    padding: 8px 12px !important;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, 
+input[type="email"]:focus, textarea:focus, select:focus {
+    border-color: var(--flay-accent) !important;
+    box-shadow: 0 0 8px rgba(56, 255, 162, 0.3) !important;
+    outline: none !important;
+}
+
+/* Лейблы */
+label {
+    color: var(--flay-accent) !important;
+    font-weight: bold !important;
+}
+
+/* Ссылки */
+a:link, a:visited {
+    color: var(--flay-accent) !important;
+}
+
+a:hover {
+    color: #2EE68F !important;
+}
+
+/* Сообщения */
+.success, .message-success {
+    background: rgba(56, 255, 162, 0.2) !important;
+    border-left: 4px solid var(--flay-accent) !important;
+    color: var(--flay-accent) !important;
+    padding: 12px !important;
+    border-radius: 4px !important;
+}
+
+.error, .message-error {
+    background: rgba(255, 0, 0, 0.2) !important;
+    border-left: 4px solid #ff4444 !important;
+    color: #ff6666 !important;
+    padding: 12px !important;
+    border-radius: 4px !important;
+}
+
+/* Хлебные крошки */
+.breadcrumbs {
+    background: rgba(29, 29, 29, 0.8) !important;
+    border-bottom: 1px solid var(--flay-accent-dark) !important;
+    padding: 10px 15px !important;
+}
+
+.breadcrumbs a {
+    color: var(--flay-accent) !important;
+}
+
+/* Фильтры */
+#changelist-filter {
+    background: rgba(29, 29, 29, 0.8) !important;
+    border: 1px solid var(--flay-accent-dark) !important;
+    border-radius: 8px !important;
+}
+
+#changelist-filter h2 {
+    background: var(--flay-accent-dark) !important;
+    color: var(--flay-accent) !important;
+    padding: 10px !important;
+    border-radius: 8px 8px 0 0 !important;
+}
+
+#changelist-filter h3 {
+    color: var(--flay-accent) !important;
+    border-bottom: 1px solid var(--flay-accent-dark) !important;
+}
+
+#changelist-filter a {
+    color: var(--flay-light) !important;
+}
+
+#changelist-filter a:hover {
+    color: var(--flay-accent) !important;
+}
+
+/* Поиск */
+#searchbar {
+    background: rgba(29, 29, 29, 0.8) !important;
+    border: 1px solid var(--flay-accent-dark) !important;
+    color: var(--flay-light) !important;
+    border-radius: 6px !important;
+}
+
+#searchbar:focus {
+    border-color: var(--flay-accent) !important;
+    box-shadow: 0 0 8px rgba(56, 255, 162, 0.3) !important;
+}
+
+/* Статистика и счетчики */
+.object-tools a {
+    background: var(--flay-accent) !important;
+    color: var(--flay-dark) !important;
+    border-radius: 6px !important;
+    padding: 8px 15px !important;
+    font-weight: bold !important;
+    box-shadow: 0 0 6px rgba(56, 255, 162, 0.4) !important;
+}
+
+.object-tools a:hover {
+    background: #2EE68F !important;
+    box-shadow: 0 0 12px rgba(56, 255, 162, 0.6) !important;
+}
+
+/* Кастомные стили для цветных полей */
+.vote_count, .current_leader {
+    color: var(--flay-accent) !important;
+    font-weight: bold !important;
+}
+
+/* Анимации */
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 6px rgba(56, 255, 162, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 12px rgba(56, 255, 162, 0.6);
+    }
+}
+
+.button.default:hover {
+    animation: glow 2s ease-in-out infinite !important;
+}
+

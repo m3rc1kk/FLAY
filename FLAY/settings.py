@@ -29,7 +29,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'flay2025.ru', 'www.flay2025.ru']
+ALLOWED_HOSTS = ['127.0.0.1', '147.45.106.229', 'localhost', 'flay2025.ru', 'www.flay2025.ru']
 
 CSRF_TRUSTED_ORIGINS = [
     'http://127.0.0.1:8000',
@@ -72,7 +72,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-#SECURE_CROSS_ORIGIN_OPENER_POLICY = 'same-origin-allow-popups'
+SECURE_CROSS_ORIGIN_OPENER_POLICY = 'same-origin-allow-popups'
 
 ROOT_URLCONF = 'FLAY.urls'
 TEMPLATES = [
@@ -157,3 +157,49 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGOUT_REDIRECT_URL = 'auth'
+
+# Разрешенные Telegram ID для доступа к системе
+ALLOWED_TELEGRAM_IDS = [
+    990528009,  
+    5979530795,  
+    873289988, 
+    5102902528,  
+    1055458466, 
+    504878224,  
+    954306322,  
+    1138838212,  
+    1079095242, 
+    806681814, 
+    2057239281, 
+    1357371205,  
+    1467375077,  
+    1907676440,  
+    1916815370, 
+    758881284,  
+    630166666, 
+    6036295496,  
+    512598328,  
+    874926781,  
+    5022994777,  
+    953533693, 
+    1387432741,  
+    1155578151, 
+    300392829, 
+    388962045,  
+    1540916177, 
+    5493332759,  
+    1327863437, 
+    6410923474,  
+    1340657836,  
+    1232409927,  
+    2069752559,  
+    635440121, 
+    5484891253,  
+    1182003156,  
+    1866042611,  
+    1487619998,  
+    215013669,  
+    1839742134,  
+    7660972984,  
+    952037284,  
+]

@@ -1,0 +1,40 @@
+.sign-in {
+
+  &__header {
+    padding-bottom: 12px;
+  }
+
+  &__button {
+    margin-top: 24px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 8px;
+
+    &-text {
+      height: 20px;
+    }
+
+    @include mobile {
+      font-size: 14px;
+      height: 50px;
+      margin-top: 16px;
+    }
+  }
+
+  &__forgot-password {
+    font-size: 14px;
+    color: var(--color-light);
+    text-align: end;
+    padding-block: 16px 20px;
+
+    @include hover {
+      color: var(--color-accent);
+    }
+
+    @include mobile {
+      padding-block: 12px 12px;
+    }
+  }
+}

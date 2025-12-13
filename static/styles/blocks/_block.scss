@@ -1,0 +1,35 @@
+.block {
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    &-title {
+      font-size: 24px;
+      filter: drop-shadow(0 0 10px var(--color-accent));
+      @include tablet {
+        font-size: 20px;
+      }
+    }
+
+    &-decoration {
+      font-size: 128px;
+      color: transparent;
+      -webkit-text-stroke: 1px var(--color-accent);
+      opacity: .05;
+      position: absolute;
+      top: -180%;
+
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+}
